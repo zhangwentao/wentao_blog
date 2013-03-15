@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title> {% block page_title %}{% endblock %} </title>
+		{% load static %}
+		<link rel="stylesheet" href="{% get_static_prefix %}css/reset.css"/>
+		<link rel="stylesheet" href="{% get_static_prefix %}css/home.css"/>
+		<script src="home.js"></script>
+	</head>
+
+	<body class="wentao-blog-container">
+		<div id="wrapper" class="paper">
+			<header class="wentao-blog-header clearfix">		
+				<h1 class="blog-name">
+					<a>文韬的BLOG</a>
+				</h1>
+				<nav class="header-navi">
+					<ul>
+						<li>
+							<a>友链</a>
+						</li>
+						<li>
+							<a>关于</a>
+						</li>
+					</ul>
+				</nav>
+			</header>		
+			<section class="main">
+			{% block content %} 
+			{% endblock %}
+			</section>
+			<footer class="wentao-blog-footer">
+				<span class="copyright">copyright © 2011-2012 文韬的BLOG</span>
+			</footer>
+		</div>
+	</body>
+</html>

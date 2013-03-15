@@ -1,0 +1,27 @@
+{% extends "blog_base.html" %}
+{% block page_title %}文韬的BLOG{% endblock %}
+{% block content %}
+<ul class="abstract-list">
+	{% for abstract in article_list %}
+	<li class="abstract-item clearfix">
+		<aside class="info">
+			<time datetime="{{abstract.creation_time.year}}-{{abstract.creation_time.month}}-{{abstract.creation_time.day}}" class="pub-time">
+			<span class="year">{{abstract.creation_time.year}}</span><span class="month">{{abstract.creation_time.month}}</span><span class="day">{{abstract.creation_time.day}}</span>
+			</time>
+		</aside>
+		<article class="abstract">
+			<h2 class="abstract-title">
+				<a href="http://testserver.com" title="阅读全文">{{abstract.title}}</a>
+			</h2>
+			{% load markup %}
+			<article class="abstract-content">{{abstract.content|safe|markdown|truncatewords_html:50}}</article>
+		</article>
+	</li>
+	{% endfor %}
+</ul>
+<nav class="paginator">                                                                                                                             
+<a class="prev-page" {% if pre_page != '' %} href="{{pre_page}}" {% endif %}>上一页</a>
+	<span class="cur-page">{{cur_page}}</span>
+	<a class="next-page" {% if next_page != '' %} href="{{next_page}}" {% endif %}>下一页</a>
+</nav>
+{% endblock %}
