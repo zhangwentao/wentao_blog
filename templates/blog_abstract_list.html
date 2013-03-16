@@ -5,7 +5,7 @@
 	{% for abstract in article_list %}
 	<li class="abstract-item clearfix">
 		<aside class="info">
-			<time datetime="{{abstract.creation_time.year}}-{{abstract.creation_time.month}}-{{abstract.creation_time.day}}" class="pub-time">
+			<time datetime="{{abstract.creation_time|date:"Y-m-d"}}" class="pub-time">
 			<span class="year">{{abstract.creation_time.year}}</span><span class="month">{{abstract.creation_time.month}}</span><span class="day">{{abstract.creation_time.day}}</span>
 			</time>
 		</aside>

@@ -1,0 +1,57 @@
+{% extends "blog_base.html" %}
+{% block page_title %}文韬的BLOG{% endblock %}
+{% block content %}
+	<article class="full-article">
+		<h2 class="title"> {{	article.title }} </h2>
+		<time class="creation-time">{{article.creation_time|date:"Y-m-d"}}</time>
+		{% load markup %}
+		{{ article.content|safe|markdown }}
+	</article>
+
+	<section class="comment-container">
+		<h2 class="comment-number">{{comment_list|length}}</h2>
+		<ul class="comment-list">
+			{% for comment in comment_list %}
+			<li>
+				<article class="comment clearfix">
+					<header class="comment-header">
+						<figure class="commenter-avatar">
+							<img src=""/>		
+						</figure>
+						<a class="commenter-name">{{comment.visitor_name}}</a>	
+						<time class="comment-time"/>{{comment.creation_time|date:"Y-m-d"}}</time>
+					</header>
+					<p class="comment-content">
+						{{comment.content}}
+					</p>
+				</article>
+			</li>
+			{% endfor %}
+		</ul>
+	</section>
+
+	<section>
+		<h2 class="comment-title">留言板</h2>
+		<form class="comment-form">
+			<p>
+				<label for="">昵称</label>
+				<input type="text" id="nickname" placeholder="必填"/>
+			</p>
+			<p>	
+				<label for="email">邮箱</label>
+				<input type="email" id="email" placeholder="必填,放心不会泄露"/>
+			</p>
+			<p>	
+				<label for="">网站</label>
+				<input type="url" id="site"/>
+			</p>
+			<p>
+				<label>内容</label>
+				<textarea placeholder="必填" id="content"></textarea>
+			</p>
+			<p class="submit-container">
+				<input type="submit" value="留言"/>
+			<p>
+		</form>
+	</section>
+{% endblock %}

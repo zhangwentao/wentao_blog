@@ -12,3 +12,8 @@ def article_list( request,page_num ):
 	pre_page = page_num-1 if article_list_page.has_previous() else ''
 	next_page = page_num+1 if article_list_page.has_next() else ''
 	return render_to_response('blog_abstract_list.html',{'article_list':article_list_page.object_list,'next_page':next_page,'pre_page':pre_page,'cur_page':page_num})
+
+def article( request, article_id ):
+	article = Article.objects.get( id = article_id )
+	comment_list = Comment.objects.filter( article = article )
+	return render_to_response( 'blog_article_page.html', {'article':article,'comment_list':comment_list})
