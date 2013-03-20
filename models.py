@@ -11,6 +11,9 @@ class Article(models.Model):
 	creation_time = models.DateTimeField(auto_now_add = True)
 	modified_time = models.DateTimeField(auto_now = True)
 
+	def __str__(self):
+		return self.title.encode('utf-8')
+
 class Comment(models.Model):
 	visitor_name = models.CharField(max_length = 50)
 	visitor_email = models.CharField(max_length = 50)
@@ -18,6 +21,9 @@ class Comment(models.Model):
 	content = models.TextField(max_length = 20000)
 	creation_time = models.DateTimeField(auto_now_add = True)
 	article = models.ForeignKey('Article')
+
+	def __str__(self):
+		return self.visitor_name.encode('utf-8')+":"+(self.content)[0:15].encode('utf-8')
 
 class Article_Tag(models.Model):
 	article = models.ForeignKey('Article')
