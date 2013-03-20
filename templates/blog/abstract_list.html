@@ -1,4 +1,4 @@
-{% extends "blog_base.html" %}
+{% extends "blog/base.html" %}
 {% block page_title %}文韬的BLOG{% endblock %}
 {% block content %}
 <ul class="abstract-list">
@@ -11,7 +11,7 @@
 		</aside>
 		<article class="abstract">
 			<h2 class="abstract-title">
-				<a href="http://testserver.com" title="阅读全文">{{abstract.title}}</a>
+				<a href="/blog/article/{{abstract.id}}" target="_blank" title="阅读全文">{{abstract.title}}</a>
 			</h2>
 			{% load markup %}
 			<article class="abstract-content">{{abstract.content|safe|markdown|truncatewords_html:50}}</article>
@@ -19,9 +19,9 @@
 	</li>
 	{% endfor %}
 </ul>
-<nav class="paginator">                                                                                                                             
-<a class="prev-page" {% if pre_page != '' %} href="{{pre_page}}" {% endif %}>上一页</a>
+<nav class="paginator">
+<a {% if pre_page != '' %}class="prev-page" href="{{pre_page}}"{% else %} class="prev-page disabled" {% endif %}>上一页</a>
 	<span class="cur-page">{{cur_page}}</span>
-	<a class="next-page" {% if next_page != '' %} href="{{next_page}}" {% endif %}>下一页</a>
+	<a {% if next_page != '' %}class="next-page"  href="/blog/article/list/{{next_page}}" {% else %} class="next-page disabled" {% endif %}>下一页</a>
 </nav>
 {% endblock %}

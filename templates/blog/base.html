@@ -4,16 +4,15 @@
 		<meta charset="utf-8"/>
 		<title> {% block page_title %}{% endblock %} </title>
 		{% load static %}
-		<link rel="stylesheet" href="{% get_static_prefix %}css/reset.css"/>
-		<link rel="stylesheet" href="{% get_static_prefix %}css/home.css"/>
-		<script src="home.js"></script>
+		<link rel="stylesheet" href="{% get_static_prefix %}core/css/reset.css"/>
+		<link rel="stylesheet" href="{% get_static_prefix %}blog/css/blog.css"/>
 	</head>
 
 	<body class="wentao-blog-container">
 		<div id="wrapper" class="paper">
-			<header class="wentao-blog-header clearfix">		
+			<header class="wentao-blog-header clearfix">
 				<h1 class="blog-name">
-					<a>文韬的BLOG</a>
+					<a href="/">文韬的BLOG</a>
 				</h1>
 				<nav class="header-navi">
 					<ul>
