@@ -142,7 +142,6 @@ li.abstract-item {
 
 .wentao-blog-footer {
 	border-top: 1px solid;
-	margin-top: 10px;
 }
 
 .copyright {
@@ -161,6 +160,14 @@ li.abstract-item {
 .comment-content {
 	border: solid gray;
 	border-width: 0 2px;
+	float: left;
+	width: 440px;
+	padding: 0 5px;
+	line-height: 1.3em;
+	font-size: 13px;
+	text-indent: 2em;
+	text-align: justify;
+	letter-spacing: 1px;
 }
 
 .commenter-avatar {
@@ -169,7 +176,7 @@ li.abstract-item {
 	padding: 2px;
 	margin: 0 10px 5px 0;
 	border-left: 2px solid;
-	background-color: gray;
+	background-color: #ddd;
 	overflow: hidden;
 	float: left;
 }
@@ -226,6 +233,9 @@ li.abstract-item {
 }
 
 /* form */
+.comment-form-container {
+	margin: 30px 0 10px;
+}
 
 .comment-title {
 	text-align: center;
@@ -244,21 +254,27 @@ li.abstract-item {
 	margin:0 auto;
 }
 
+.veri-code {
+	position: absolute;
+	right: 10px;
+	top: 6px;
+	border: 1px solid #888;
+	border-radius: 5px;
+}
+
 .comment-form input, 
 .comment-form textarea {		
 	margin-bottom: 5px;
 }
 
 .comment-form input {
-	width: 300px;
+	width: 270px;
 }
 
 .comment-form textarea {		
 	vertical-align: top;
-	width: 380px;
-	max-width: 390px;
-	min-width: 390px;
-	height: 100px;
+	max-width: 397px;
+	min-width: 397px;
 	min-height: 100px;
 }
 
@@ -288,8 +304,12 @@ li.abstract-item {
 	text-align: center;
 }
 
+.paginator .disabled {
+	visibility: hidden;
+}
+
 .paginator a {
-	font-size: 14px;
+	font-size: 12px;
 }
 
 .paginator a[href]:hover {
@@ -304,26 +324,50 @@ li.abstract-item {
 	margin: 0 10px;
 }
 
+.paginator .cur-page:before {
+	content: "- ";
+}
+
+.paginator .cur-page:after {
+	content: " -";
+}
+
 .full-article {
-	padding: 25px 0 30px;
-	margin: 0 auto;
-	width: 570px;
+	margin: 25px auto 30px;
+	width: 550px;
 	font-family: serif,sans-serif;
 	text-align: justify;
 	letter-spacing: 2px;
 	font-size: 15px;
 }
 
-.full-article .creation-time {
+.full-article li {
+	text-indent: 2em;
+}
+
+.full-article ol,
+.full-article ul {
+	margin: 8px 0;
+}
+
+.full-article a {
+	text-decoration: underline;	
+}
+
+.article-container {
+	padding-top: 40px;
+}
+
+.article-header .creation-time {
 	display: block;
 	text-align: center;
 	font-size: 12px;
-	margin:5px 0 15px;
+	margin-top: 5px;
 	font-family: monospace;
 	color: #888;
 }
 
-.full-article h2.title {
+.article-header h2.title {
 	text-align: center;
 	font-size: 20px;
 }
