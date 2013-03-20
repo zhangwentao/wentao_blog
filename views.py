@@ -7,8 +7,8 @@ from models import Article,Tag,Article_Tag,Comment
 from DjangoVerifyCode import Code
 import re
 
-def article_list( request,page_num ):
-	all_article_list = Article.objects.order_by("-creation_time")
+def article_list( request,page_num='1' ):
+	all_article_list = Article.objects.filter(is_flatpage=False).order_by("-creation_time")
 	page_num = int( page_num )
 	paging_step = 5
 	paging = Paginator( all_article_list, paging_step )
@@ -17,15 +17,18 @@ def article_list( request,page_num ):
 	next_page = page_num+1 if article_list_page.has_next() else ''
 	return render_to_response('blog/abstract_list.html',{'article_list':article_list_page.object_list,'next_page':next_page,'pre_page':pre_page,'cur_page':page_num})
 
-def code( request ):
+def captcha( request ):
 	code = Code(request)
 	code.type = 'number'
 	code.img_width = 120
 	code.img_height = 70
 	return code.display()
 
-def article( request, article_id ):
-	article = Article.objects.get( id = article_id )
+def article( request, article_id='null' ):
+	if article_id == 'null':
+		article = Article.objects.filter(is_flatpage=False).order_by("-creation_time")[0]
+	else:
+		article = Article.objects.get( id = article_id )
 	comment_list = Comment.objects.filter( article = article )
 	context_instance = RequestContext(request)
 	param_dict = {
@@ -65,6 +68,3 @@ def comment(request):
 	com = Comment(visitor_name=name,visitor_email=email,visitor_site=site,content=content,article = article)
 	com.save()
 	return HttpResponseRedirect(page_url)
-
-def home ( request ):
-	return article_list(request,1)

@@ -1,10 +1,12 @@
 from django.conf.urls.defaults import patterns, include, url
-from views import article_list, article, comment, code, home
+import views
 
 urlpatterns = patterns('',
-	('^$',home),
-	(r'^article/list/(\d+)$',article_list),
-	(r'^article/(\d+)$',article),
-	(r'^article/comment$',comment),
-	(r'^code/$',code)
+	('^$',views.article_list),
+	(r'^article/list/$',views.article_list),
+	(r'^article/list/(?P<page_num>\d+)$',views.article_list),
+	(r'^article/$',views.article),
+	(r'^article/(?P<article_id>\d+)$',views.article),
+	(r'^article/comment$',views.comment),
+	(r'^captcha/$',views.captcha)
 )
