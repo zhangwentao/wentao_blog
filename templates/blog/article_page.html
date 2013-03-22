@@ -1,6 +1,8 @@
 {% extends "blog/base.html" %}
 {% block page_title %}文韬的BLOG{% endblock %}
 {% block content %}
+	
+	{% block main_content %}
 	<section class="article-container">
 		<header class="article-header">
 			<h2 class="title"> {{	article.title }} </h2>
@@ -11,7 +13,9 @@
 			{{ article.content|safe|markdown }}
 		</article>
 	</section>
+	{% endblock %}
 
+	{% if article.enable_comments %}
 	<section class="comment-container">
 		<h2 class="comment-number">{{comment_list|length}}</h2>
 		<ul class="comment-list">
@@ -66,4 +70,5 @@
 			<p>
 		</form>
 	</section>
+	{% endif %}
 {% endblock %}
