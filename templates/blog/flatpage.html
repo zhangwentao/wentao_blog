@@ -1,0 +1,14 @@
+{% extends 'blog/article_page.html' %}
+{% block main_content %}
+
+	<section class="page-article-container">
+		<header class="article-header">
+			<h2 class="title"> {{	article.title }} </h2>
+		</header>
+		<article class="full-article">
+			{% load markup %}
+			{{ article.content|safe|markdown }}
+		</article>
+	</section>
+
+{% endblock %}
