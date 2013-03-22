@@ -24,9 +24,10 @@
 				<article class="comment clearfix">
 					<header class="comment-header">
 						<figure class="commenter-avatar">
-							<img src=""/>
+							{% load gravatar %}
+							<img src="{{comment.visitor_email|gravatar:"40"}}"/>
 						</figure>
-						<a class="commenter-name">{{comment.visitor_name}}</a>
+						<a class="commenter-name" target="_blank" href="{{comment.visitor_site}}">{{comment.visitor_name}}</a>
 						<time class="comment-time"/>{{comment.creation_time|date:"Y-m-d"}}</time>
 					</header>
 					<div class="comment-content">
