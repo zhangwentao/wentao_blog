@@ -24,7 +24,7 @@ def captcha( request ):
 	code.img_height = 70
 	return code.display()
 
-def article( request, article_id='null' ):
+def article( request, article_id='null', template='blog/article_page.html' ):
 	if article_id == 'null':
 		article = Article.objects.filter(is_flatpage=False).order_by("-creation_time")[0]
 	else:
@@ -36,7 +36,7 @@ def article( request, article_id='null' ):
 			'comment_list':comment_list,
 			'page_url':request.build_absolute_uri(),
 			}
-	return render_to_response( 'blog/article_page.html', param_dict, context_instance)
+	return render_to_response( template, param_dict, context_instance)
 
 def validateEmailAddr(addrString):
 	pattern = re.compile("\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*")	
@@ -57,14 +57,28 @@ def comment(request):
 	page_url=post['page_url']
 	code = Code(request)
 	if name == '' or email == '' or content == '':
-		return render_to_response("blog/error.html",{"reason":"姓名、邮箱和内容是必填的。"})
+		return error("姓名、邮箱和内容是必填的。")
 	if validateEmailAddr(email) == False:
-		return render_to_response("blog/error.html",{"reason":"你的邮箱地址的格式不对。"})
+		return error("你的邮箱地址的格式不对。")
 	if veri_code == '':
-		return render_to_response("blog/error.html",{"reason":"请填写验证码"})
+		return error("请填写验证码")
 	if not code.check(veri_code):
-		return render_to_response("blog/error.html",{"reason":"验证码不正确"})
+		return error("验证码不正确")
 	article=Article.objects.get(id = article_id)
 	com = Comment(visitor_name=name,visitor_email=email,visitor_site=site,content=content,article = article)
 	com.save()
 	return HttpResponseRedirect(page_url)
+
+def page(request,page_url):
+	print page_url
+	page_article = Article.objects.filter(is_flatpage=True).get(flatpage_url = page_url)
+	return article(request,page_article.id,'blog/flatpage.html') 
+
+def error(reason):
+	return render_to_response("blog/error.html",{"reason":reason})
+
+def handle404(request):
+	return error("404 你懂的")
+
+def handle500(request):
+	return error("500 你懂得")

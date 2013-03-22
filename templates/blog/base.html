@@ -3,9 +3,8 @@
 	<head>
 		<meta charset="utf-8"/>
 		<title> {% block page_title %}{% endblock %} </title>
-		{% load static %}
-		<link rel="stylesheet" href="{% get_static_prefix %}core/css/reset.css"/>
-		<link rel="stylesheet" href="{% get_static_prefix %}blog/css/blog.css"/>
+		<link rel="stylesheet" href="/static/core/css/reset.css"/>
+		<link rel="stylesheet" href="/static/blog/css/blog.css"/>
 	</head>
 
 	<body class="wentao-blog-container">
@@ -17,10 +16,10 @@
 				<nav class="header-navi">
 					<ul>
 						<li>
-							<a>友链</a>
+							<a href="/blog/page/friendlink/">友链</a>
 						</li>
 						<li>
-							<a>关于</a>
+							<a href="/blog/page/about/">关于</a>
 						</li>
 					</ul>
 				</nav>

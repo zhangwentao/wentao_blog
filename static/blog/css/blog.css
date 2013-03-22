@@ -59,7 +59,6 @@ a[href]:active {
 
 .paper {
 	width: 600px;
-	min-height: 300px;
 	margin: 0 auto;
 	padding: 40px 20px 0; 
 	background-color: #fff;
@@ -324,14 +323,6 @@ li.abstract-item {
 	margin: 0 10px;
 }
 
-.paginator .cur-page:before {
-	content: "- ";
-}
-
-.paginator .cur-page:after {
-	content: " -";
-}
-
 .full-article {
 	margin: 25px auto 30px;
 	width: 550px;
@@ -354,8 +345,9 @@ li.abstract-item {
 	text-decoration: underline;	
 }
 
-.article-container {
-	padding-top: 40px;
+.article-container,
+.page-article-container {
+	margin: 40px 0 80px;	
 }
 
 .article-header .creation-time {
@@ -379,4 +371,32 @@ li.abstract-item {
 .full-article p {
 	text-indent: 2em;
 	margin-bottom: 5px;
+}
+
+.errorpage-info-container {	
+	width: 500px;
+	margin: 40px auto 30px;
+}
+
+.error-title {
+	margin-bottom: 10px;
+}
+
+.error-info {
+	color: #fff;
+	width: 400px;
+	margin: 10px auto;
+	padding: 10px;
+	background-color: #888;
+	border-radius: 5px;
+}
+
+.error-info a {
+	text-decoration: underline;
+	color: #fff;
+	margin-right: 10px;
+}
+
+.error-msg {
+	margin-bottom: 10px;
 }

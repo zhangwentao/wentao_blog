@@ -1,4 +1,4 @@
-from django.conf.urls.defaults import patterns, include, url
+from django.conf.urls.defaults import *
 import views
 
 urlpatterns = patterns('',
@@ -8,5 +8,7 @@ urlpatterns = patterns('',
 	(r'^article/$',views.article),
 	(r'^article/(?P<article_id>\d+)$',views.article),
 	(r'^article/comment$',views.comment),
+	(r'^page/(?P<page_url>\w+)/$',views.page),
 	(r'^captcha/$',views.captcha)
 )
+

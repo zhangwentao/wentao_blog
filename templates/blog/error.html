@@ -1,7 +1,18 @@
 {% extends "blog/base.html" %}
 {% block content %}
-	<h1>Error</h1>
-	<p style="text-align:center;">
-		{{reason}}
-	</p>
+	<section class="errorpage-info-container">
+		<h2 class="error-title">发生了一点小问题，请参考以下提示：</h2>
+		<div class="error-info" >
+			<div class="error-msg">
+				{{reason}}
+			</div>
+		</div>
+		<h2 class="error-title">可以采取一下操作：</h2>
+		<div class="error-info" >
+			<nav>
+					<a href="javascript:window.history.back();">返回上个页面</a>
+					<a href="/">返回首页</a>
+			</nav>
+		</div>
+	</section>
 {% endblock %}
