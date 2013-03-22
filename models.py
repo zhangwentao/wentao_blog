@@ -10,6 +10,9 @@ class Article(models.Model):
 	content = models.TextField(max_length = 20000)
 	creation_time = models.DateTimeField(auto_now_add = True)
 	modified_time = models.DateTimeField(auto_now = True)
+	enable_comments = models.BooleanField(default = True)
+	is_flatpage = models.BooleanField(default = False)
+	flatpage_url = models.CharField(blank = True,max_length = 50)
 
 	def __str__(self):
 		return self.title.encode('utf-8')
