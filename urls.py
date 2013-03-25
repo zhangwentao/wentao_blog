@@ -9,6 +9,7 @@ urlpatterns = patterns('',
 	(r'^article/(?P<article_id>\d+)$',views.article),
 	(r'^article/comment$',views.comment),
 	(r'^page/(?P<page_url>\w+)/$',views.page),
-	(r'^captcha/$',views.captcha)
+	(r'^captcha/$',views.captcha),
+	(r'^feeds/$',views.BlogFeed())
 )
 

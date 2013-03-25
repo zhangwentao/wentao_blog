@@ -6,6 +6,9 @@ from django.core.paginator import Paginator
 from models import Article,Tag,Article_Tag,Comment
 from DjangoVerifyCode import Code
 import re
+from django.contrib.syndication.views import Feed 
+from django.utils.safestring import mark_safe
+import markdown
 
 def article_list( request,page_num='1' ):
 	all_article_list = Article.objects.filter(is_flatpage=False).order_by("-creation_time")
@@ -82,3 +85,18 @@ def handle404(request):
 
 def handle500(request):
 	return error("500 你懂得")
+
+class BlogFeed(Feed):
+	title = "文韬的BLOG"
+	link = 'http://wentao.me'
+	description = "wentao's blog"	
+	def items(self):
+		return Article.objects.filter(is_flatpage=False).order_by("-creation_time")
+	def item_title(self,item):
+		return item.title
+	def item_link(self,item):
+		return self.link+'/blog/article/'+str(item.id)
+	def item_description(self,item):
+		return mark_safe(markdown.markdown(item.content))
+	def item_pubdate(self,item):
+		return item.modified_time
