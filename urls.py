@@ -11,5 +11,6 @@ urlpatterns = patterns('',
 	(r'^page/(?P<page_url>\w+)/$',views.page),
 	(r'^captcha/$',views.captcha),
 	(r'^feeds/$',views.BlogFeed())
+	(r'^feed/$',views.BlogFeed())
 )
 
