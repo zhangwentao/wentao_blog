@@ -27,7 +27,7 @@
 							{% load gravatar %}
 							<img src="{{comment.visitor_email|gravatar:"40"}}"/>
 						</figure>
-						<a class="commenter-name" target="_blank" href="{{comment.visitor_site}}">{{comment.visitor_name}}</a>
+						<a class="commenter-name" target="_blank" {%ifnotequal comment.visitor_site '' %}href="{{comment.visitor_site}}"{% endifnotequal %}>{{comment.visitor_name}}</a>
 						<time class="comment-time"/>{{comment.creation_time|date:"Y-m-d"}}</time>
 					</header>
 					<div class="comment-content">
