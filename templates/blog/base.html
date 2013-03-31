@@ -5,6 +5,10 @@
 		<title> {% block page_title %}{% endblock %} </title>
 		<link rel="stylesheet" href="/static/core/css/reset.css"/>
 		<link rel="stylesheet" href="/static/blog/css/blog.css"/>
+		<script src="/static/syntaxhighlighter/js/shCore.js"></script>
+		<script src="/static/syntaxhighlighter/js/shBrushJScript.js"></script>
+		<link href="/static/syntaxhighlighter/css/shCore.css" rel="stylesheet" type="text/css" />
+		<link href="/static/syntaxhighlighter/css/shThemeDefault.css" rel="stylesheet" type="text/css" />
 	</head>
 
 	<body class="wentao-blog-container">
@@ -42,6 +46,8 @@
 				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 			  })();
+			  SyntaxHighlighter.defaults['toolbar'] = false;
+			  SyntaxHighlighter.all();
 		</script>
 	</body>
 </html>
