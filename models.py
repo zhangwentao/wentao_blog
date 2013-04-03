@@ -5,6 +5,9 @@ class Tag(models.Model):
 	creation_time = models.DateTimeField(auto_now_add = True)
 	modified_time = models.DateTimeField(auto_now = True)
 
+	def __str__(self):
+		return self.name.encode('utf-8')
+
 class Article(models.Model):
 	title = models.CharField(max_length = 50)
 	content = models.TextField(max_length = 20000)
@@ -31,3 +34,6 @@ class Comment(models.Model):
 class Article_Tag(models.Model):
 	article = models.ForeignKey('Article')
 	tag = models.ForeignKey('Tag')
+
+	def __str__(self):
+		return '['+self.tag.name.encode('utf-8')+']-'+self.article.title.encode('utf-8')
