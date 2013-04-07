@@ -46,24 +46,24 @@
 			<input type="hidden" name="artical_id" value="{{article.id}}"/>
 			<input type="hidden" name="page_url" value="{{page_url}}"/>
 			<p>
-				<label for="">昵称</label>
-				<input type="text" id="nickname" name="name" placeholder="必填"/>
+				<label for="nickname">昵称</label>
+				<input type="text" id="nickname" name="name" placeholder="必填" required/>
 			</p>
 			<p>
 				<label for="email">邮箱</label>
-				<input type="email" id="email" name="email" placeholder="必填。放心不会泄露"/>
+				<input type="email" id="email" name="email" placeholder="必填。放心不会泄露" required/>
 			</p>
 			<p>
-				<label for="">网站</label>
+				<label for="site">网站</label>
 				<input type="url" id="site" name="site" placeholder="你的个人网站"/>
 			</p>
 			<p>
-				<label>内容</label>
-				<textarea id="content" name="content" placeholder="必填。说点什么"></textarea>
+				<label for="content">内容</label>
+				<textarea id="content" name="content" placeholder="必填。说点什么" required></textarea>
 			</p>
 			<p>
-				<label>验证码</label>
-				<input type="text" name="veri_code" placeholder="必填。填写右上角图片里的计算结果"/>
+				<label for="captcha">验证码</label>
+				<input type="text" id="captcha" name="veri_code" placeholder="必填。填写右上角图片里的计算结果" required/>
 				<img src="/blog/captcha/" class="veri-code" title="这是验证码"/>
 			</p>
 			<p class="submit-container">
