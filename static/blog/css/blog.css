@@ -1,17 +1,13 @@
 @charset "UTF-8";
 html {
 	background-color: #f5f5f5;
-	font-family: sans-serif;
+	font-family: "Helvetica Neue",Arial,sans-serif;
 }
 
 /* font */
 h1,h2,h3,h4,h5,h6 {
 	font-family: monospace,serif;
 	font-weight: bold;
-}
-
-p {
-	font-family: serif;
 }
 
 /* input textarea */
@@ -326,7 +322,6 @@ li.abstract-item {
 .full-article {
 	margin: 25px auto 30px;
 	width: 550px;
-	font-family: serif,sans-serif;
 	text-align: justify;
 	letter-spacing: 2px;
 	font-size: 15px;
@@ -334,6 +329,8 @@ li.abstract-item {
 
 .full-article li {
 	text-indent: 2em;
+	list-style-type: disc;
+	list-style-position: inside;
 }
 
 .full-article ol,
