@@ -1,12 +1,11 @@
 @charset "UTF-8";
 html {
 	background-color: #f5f5f5;
-	font-family: "Helvetica Neue",Arial,sans-serif;
+	font-family: 'Droid Sans Fallback',Arial,sans-serif;
 }
 
 /* font */
 h1,h2,h3,h4,h5,h6 {
-	font-family: monospace,serif;
 	font-weight: bold;
 }
 
@@ -16,7 +15,7 @@ textarea {
 	outline: none;
 	border: 1px solid #929292;
 	border-radius: 3px;
-	font-family: sans-serif;
+	font-family: Arial, sans-serif;
 }
 
 input:focus,
@@ -124,16 +123,16 @@ li.abstract-item {
 
 .abstract-title {
 	font-size: 18px;
-	letter-spacing: 3px;
+	letter-spacing: 2px;
 }
 
 .abstract-content {
 	padding-top: 5px;
 	font-size: 14px;
-/*	line-height: 1.3em;*/
+	line-height: 1.4em;
 	text-indent: 2em;
 	text-align: justify;
-	letter-spacing: 1px;
+	letter-spacing: 2px;
 }
 
 .wentao-blog-footer {
@@ -260,10 +259,13 @@ li.abstract-item {
 .comment-form input, 
 .comment-form textarea {		
 	margin-bottom: 5px;
+	line-height: 20px;
+	font-size: 14px;
 }
 
 .comment-form input {
 	width: 270px;
+	height: 20px;
 }
 
 .comment-form textarea {		
@@ -282,7 +284,6 @@ li.abstract-item {
 }
 
 .comment-form input[type="submit"] {
-	padding: 2px;
 	width: auto;
 	margin: 0;
 	font-weight: bold;
