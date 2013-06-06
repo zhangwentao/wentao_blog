@@ -69,6 +69,7 @@ a[href]:active {
 .blog-name {
 	font-weight: bold;
 	font-size: 26px;
+	font-family:'微软雅黑','Droid Sans Fallback',Arial,sans-serif;
 }
 
 .header-navi {
@@ -98,7 +99,7 @@ li.abstract-item {
 .pub-time {
 	display: block;
 	font-size: 13px;
-	font-family: sans-serif;
+	font-family: '黑体',monospace;
 	width: 50px;
 	padding: 3px 10px 2px 0;
 	text-align: center;
@@ -209,6 +210,12 @@ li.abstract-item {
 
 .comment-number:after {
 	content: "条留言-";
+}
+
+.comment-number,
+.comment-number:after,
+.comment-number:before {
+	font-size: 12px;
 }
 
 .commenter-avatar img {
@@ -326,6 +333,31 @@ li.abstract-item {
 	text-align: justify;
 	letter-spacing: 2px;
 	font-size: 15px;
+	font-family: 'Georgia','Times New Roman','Droid Sans Fallback',sans-serif;
+	line-height: 1.4em;
+}
+
+.full-article h1 {
+	margin: 10px 0 6px 0;
+}
+
+.full-article h2 {
+	margin: 8px 0 5px 0;
+}
+
+.full-article blockquote {
+	border-left: 4px solid gray;
+	padding:0 10px 0 10px;
+	margin: 5px 5px 5px 10px;
+	font-size: 13px;
+}
+
+.full-article pre code {
+	display: block;
+	background: #000;
+	color: #fff;
+	font-family: monospace; 
+	padding: 5px;
 }
 
 .full-article li {
