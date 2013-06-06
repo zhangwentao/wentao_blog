@@ -345,6 +345,10 @@ li.abstract-item {
 	margin: 8px 0 5px 0;
 }
 
+.full-article strong {
+	font-weight: bold;
+}
+
 .full-article blockquote {
 	border-left: 4px solid gray;
 	padding:0 10px 0 10px;
