@@ -136,6 +136,10 @@ li.abstract-item {
 	letter-spacing: 2px;
 }
 
+.abstract-content img {
+	max-width: 460px !important;
+}
+
 .wentao-blog-footer {
 	border-top: 1px solid;
 }
