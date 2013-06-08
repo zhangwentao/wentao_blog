@@ -369,9 +369,18 @@ li.abstract-item {
 }
 
 .full-article li {
-	text-indent: 2em;
+	margin-left: 2em;
 	list-style-type: disc;
 	list-style-position: inside;
+}
+
+.full-article li li {
+	list-style-type: square;
+}
+
+
+.full-article li li li{
+	list-style-type: circle;
 }
 
 .full-article ol,
