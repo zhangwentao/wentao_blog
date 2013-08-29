@@ -1,7 +1,7 @@
 @charset "UTF-8";
 html {
 	background-color: #f5f5f5;
-	font-family: 'Droid Sans Fallback',Arial,sans-serif;
+	font-family: 'Droid Sans Fallback',Arial,sans-serif,'Microsoft YaHei';
 }
 
 /* font */
@@ -15,7 +15,7 @@ textarea {
 	outline: none;
 	border: 1px solid #929292;
 	border-radius: 3px;
-	font-family: Arial, sans-serif;
+	font-family: Arial, sans-serif,'Microsoft YaHei';
 }
 
 input:focus,
@@ -69,15 +69,15 @@ a[href]:active {
 .blog-name {
 	font-weight: bold;
 	font-size: 26px;
-	font-family:'微软雅黑','Droid Sans Fallback',Arial,sans-serif;
+	font-family:'Droid Sans Fallback',Arial,sans-serif,'Microsoft YaHei';
 }
 
 .blog-name span {
-	background: #f00;
+	background: #db0b0b;
 	color: #fff;
-	border-radius: 16px;
+	border-radius: 20px;
 	font-size: 22px;
-	padding: 3px 5px;
+	padding: 3px 7px;
 	font-weight: bolder;
 }
 
@@ -108,7 +108,7 @@ li.abstract-item {
 .pub-time {
 	display: block;
 	font-size: 13px;
-	font-family: '黑体',monospace;
+	font-family: '黑体',monospace,'Microsoft YaHei';
 	width: 50px;
 	padding: 3px 10px 2px 0;
 	text-align: center;
@@ -142,7 +142,7 @@ li.abstract-item {
 	line-height: 1.4em;
 	text-indent: 2em;
 	text-align: justify;
-	letter-spacing: 2px;
+	letter-spacing: 0.1em;
 }
 
 .abstract-content img {
@@ -190,7 +190,7 @@ li.abstract-item {
 }
 
 .comment-header {
-	font-family: monospace;
+	font-family: monospace,'Microsoft YaHei';
 	margin-bottom: 6px;	
 }
 
@@ -210,7 +210,7 @@ li.abstract-item {
 }
 
 .comment-number {
-	font-family: monospace;
+	font-family: monospace,'Microsoft YaHei';
 	text-align: center;
 	color: #888;
 	font-weight: normal;
@@ -334,7 +334,7 @@ li.abstract-item {
 }
 
 .paginator .cur-page {
-	font-family: monospace;
+	font-family: monospace,'Microsoft YaHei';
 	font-size: 18px;
 	font-weight: bold;
 	margin: 0 10px;
@@ -344,10 +344,10 @@ li.abstract-item {
 	margin: 25px auto 30px;
 	width: 550px;
 	text-align: justify;
-	letter-spacing: 2px;
 	font-size: 15px;
-	font-family: 'Georgia','Times New Roman','Droid Sans Fallback',sans-serif;
+	font-family: 'Georgia','Times New Roman','Droid Sans Fallback',sans-serif,'Microsoft YaHei';
 	line-height: 1.4em;
+	letter-spacing: 0.1em;
 }
 
 .full-article h1 {
@@ -373,7 +373,7 @@ li.abstract-item {
 	display: block;
 	background: #000;
 	color: #fff;
-	font-family: monospace; 
+	font-family: monospace,'Microsoft YaHei'; 
 	padding: 5px;
 }
 
@@ -411,7 +411,7 @@ li.abstract-item {
 	text-align: center;
 	font-size: 12px;
 	margin-top: 5px;
-	font-family: monospace;
+	font-family: monospace,'Microsoft YaHei';
 	color: #888;
 }
 
