@@ -72,6 +72,15 @@ a[href]:active {
 	font-family:'微软雅黑','Droid Sans Fallback',Arial,sans-serif;
 }
 
+.blog-name span {
+	background: #f00;
+	color: #fff;
+	border-radius: 16px;
+	font-size: 22px;
+	padding: 3px 5px;
+	font-weight: bolder;
+}
+
 .header-navi {
 	float: right;
 	font-size: 14px;
