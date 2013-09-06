@@ -77,8 +77,12 @@ a[href]:active {
 	color: #fff;
 	border-radius: 20px;
 	font-size: 22px;
-	padding: 3px 7px;
 	font-weight: bolder;
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+	text-align: center;
+	line-height: 40px;
 }
 
 .header-navi {
